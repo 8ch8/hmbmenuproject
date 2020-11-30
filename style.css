@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.parent {
+  background: rgb(59, 58, 58);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  border: 10px solid rgb(0, 0, 0);
+  text-align: center;
+}
+
+.child1 {
+  width: 200px;
+  height: 200px;
+  background: rgb(72, 85, 128);
+  flex-grow: 2;
+}
+
+.continer {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.stick,
+.stick:before,
+.stick:after {
+  width: 250px;
+  height: 10px;
+  background: rgb(201, 145, 145);
+  top: 50%;
+  left: 40%;
+  position: absolute;
+  transition: all 0.6s;
+  border-radius: 10px;
+}
+
+.stick:before {
+  content: "";
+  top: -16px;
+  left: 0px;
+}
+
+.stick:after {
+  content: "";
+  top: 16px;
+  left: 0px;
+}
+
+.stick.open {
+  transform: translateX(-50px);
+  background: transparent;
+}
+
+.stick.open:after {
+  transform: rotate(-45deg) translate(50px, 28px);
+}
+
+.stick.open:before {
+  transform: rotate(45deg) translate(50px, -28px);
+}
